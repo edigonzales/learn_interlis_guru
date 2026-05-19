@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - INTERLIS Lab Demo</title>
+    <link rel="stylesheet" href="../site-assets/jetbrainsmono.css">
+    <link rel="stylesheet" href="../site-assets/merriweather.css">
+    <link rel="stylesheet" href="../site-assets/source-sans-3.css">
+    <link rel="stylesheet" href="../site-assets/notoserif.css">
+    <link rel="stylesheet" href="../site-assets/open-sans.css">
+    <link rel="stylesheet" href="../site-assets/literata.css">
+    <link rel="stylesheet" href="../site-assets/atkinson-hyperlegible-next.css">
+    <link rel="stylesheet" href="../site-assets/ibm-plex-sans.css">
+    <link rel="stylesheet" href="../site-assets/styles.css">
+    <link rel="stylesheet" href="../site-assets/custom.css">
+    <link rel="stylesheet" href="../site-assets/prism/prism.css">
+    <link rel="stylesheet" href="../site-assets/prism-overrides.css">
+    <link rel="stylesheet" href="../site-assets/prism/plugins/line-highlight/prism-line-highlight.min.css">
+    <link rel="stylesheet" href="../site-assets/prism/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="../site-assets/prism/plugins/toolbar/prism-toolbar.min.css">
+    <script src="../site-assets/lunr.min.js" defer></script>
+    <script src="../search-index.js" defer></script>
+    <script src="../site-assets/search.js" defer></script>
+    <script src="../site-assets/prism/prism.js" defer></script>
+    <script src="../site-assets/prism-conum-bridge.js" defer></script>
+    <script src="../site-assets/prism/components/prism-markup.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-clike.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-javascript.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-css.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-ini.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-interlis.js" defer></script>
+    <script src="../site-assets/prism/components/prism-java.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-typescript.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-json.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-bash.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-sql.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-python.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-yaml.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-kotlin.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-go.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-c.min.js" defer></script>
+    <script src="../site-assets/prism/components/prism-cpp.min.js" defer></script>
+    <script src="../site-assets/prism/plugins/line-highlight/prism-line-highlight.min.js" defer></script>
+    <script src="../site-assets/prism/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="../site-assets/prism/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="../site-assets/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+</head>
+<body data-search-language-mode="multilingual_safe" data-single-page-mode="false" data-initial-chapter-id="" data-current-component-id="" data-current-version="" data-site-root-href="../" data-search-index-url="../search-index.json">
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../" class="site-title">
+                <span class="site-title-text">INTERLIS Lab Demo</span>
+            </a>
+                <nav class="doc-switcher">
+                    <label for="doc-switch">Documentation:</label>
+                    <select id="doc-switch" onchange="window.location.href=this.value">
+                        <option value="" disabled selected>Select documentation</option>
+                            <option value="../interlis-lab-demo/main/"
+                                >
+                                INTERLIS Lab Demo
+                            </option>
+                    </select>
+                </nav>
+            <form class="search-form" action="../search/" method="get" role="search">
+                <!--<label for="search-input">Search:</label>-->
+                <input id="search-input" type="search" name="q" value="" placeholder="Search documentation">
+                <input id="search-scope-input" type="hidden" name="scope" value="global">
+                <input id="search-component-input" type="hidden" name="component" value="">
+                <input id="search-version-input" type="hidden" name="version" value="">
+                <label for="search-scope-active" class="search-scope-toggle is-disabled">
+                    <input id="search-scope-active" type="checkbox" disabled>
+                    <span>Active doc</span>
+                </label>
+            </form>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <main class="content">
+
+    <section class="search-page">
+        <h1>Search</h1>
+        <p id="search-query" class="search-status">Enter a search term.</p>
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+    </section>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>Generated by <a href="https://github.com/stefan/thoth">Thoth Biblios</a></p>
+    </footer>
+</body>
+</html>

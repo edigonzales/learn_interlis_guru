@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERLIS Lab Demo</title>
+    <link rel="stylesheet" href="../../../site-assets/jetbrainsmono.css">
+    <link rel="stylesheet" href="../../../site-assets/merriweather.css">
+    <link rel="stylesheet" href="../../../site-assets/source-sans-3.css">
+    <link rel="stylesheet" href="../../../site-assets/notoserif.css">
+    <link rel="stylesheet" href="../../../site-assets/open-sans.css">
+    <link rel="stylesheet" href="../../../site-assets/literata.css">
+    <link rel="stylesheet" href="../../../site-assets/atkinson-hyperlegible-next.css">
+    <link rel="stylesheet" href="../../../site-assets/ibm-plex-sans.css">
+    <link rel="stylesheet" href="../../../site-assets/styles.css">
+    <link rel="stylesheet" href="../../../site-assets/custom.css">
+    <link rel="stylesheet" href="../../../site-assets/prism/prism.css">
+    <link rel="stylesheet" href="../../../site-assets/prism-overrides.css">
+    <link rel="stylesheet" href="../../../site-assets/prism/plugins/line-highlight/prism-line-highlight.min.css">
+    <link rel="stylesheet" href="../../../site-assets/prism/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="../../../site-assets/prism/plugins/toolbar/prism-toolbar.min.css">
+    <script src="../../../site-assets/lunr.min.js" defer></script>
+    <script src="../../../site-assets/search.js" defer></script>
+    <script type="module" src="../../../site-assets/interlis-lab/interlis-lab.js"></script>
+    <script src="../../../site-assets/prism/prism.js" defer></script>
+    <script src="../../../site-assets/prism-conum-bridge.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-markup.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-clike.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-javascript.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-css.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-ini.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-interlis.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-java.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-typescript.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-json.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-bash.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-sql.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-python.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-yaml.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-kotlin.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-go.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-c.min.js" defer></script>
+    <script src="../../../site-assets/prism/components/prism-cpp.min.js" defer></script>
+    <script src="../../../site-assets/prism/plugins/line-highlight/prism-line-highlight.min.js" defer></script>
+    <script src="../../../site-assets/prism/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
+    <script src="../../../site-assets/prism/plugins/toolbar/prism-toolbar.min.js" defer></script>
+    <script src="../../../site-assets/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+</head>
+<body data-search-language-mode="multilingual_safe" data-single-page-mode="false" data-initial-chapter-id="" data-current-component-id="interlis-lab-demo" data-current-version="main" data-site-root-href="../../../" data-search-index-url="../../../search-index.json">
+    <header class="site-header">
+        <div class="header-content">
+            <a href="../../../" class="site-title">
+                <span class="site-title-text">INTERLIS Lab Demo</span>
+            </a>
+                <nav class="doc-switcher">
+                    <label for="doc-switch">Documentation:</label>
+                    <select id="doc-switch" onchange="window.location.href=this.value">
+                        <option value="" disabled >Select documentation</option>
+                            <option value="../../../interlis-lab-demo/main/"
+                                selected>
+                                INTERLIS Lab Demo
+                            </option>
+                    </select>
+                </nav>
+                <nav class="version-switcher">
+                    <label for="version-switch">Version:</label>
+                    <select id="version-switch" onchange="window.location.href=this.value">
+                        <option disabled>Version</option>
+                            <option value="../../../interlis-lab-demo/main/"
+                                selected>
+                                v0.0.1
+                            </option>
+                    </select>
+                </nav>
+            <form class="search-form" action="../../../search/" method="get" role="search">
+                <!--<label for="search-input">Search:</label>-->
+                <input id="search-input" type="search" name="q" value="" placeholder="Search documentation">
+                <input id="search-scope-input" type="hidden" name="scope" value="global">
+                <input id="search-component-input" type="hidden" name="component" value="interlis-lab-demo">
+                <input id="search-version-input" type="hidden" name="version" value="main">
+                <label for="search-scope-active" class="search-scope-toggle">
+                    <input id="search-scope-active" type="checkbox">
+                    <span>Active doc</span>
+                </label>
+            </form>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+
+    <ul class="nav-list">
+
+            <li class="nav-item">
+                    <a href="../../../interlis-lab-demo/main/"
+                       class="nav-link"
+                       >
+                        Überblick
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                    <a href="../../../interlis-lab-demo/main/01-erste-klasse/"
+                       class="nav-link active"
+                       >
+                        Übung 1 - Deine erste Klasse
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                    <a href="../../../interlis-lab-demo/main/02-pflichtfelder-und-bereich/"
+                       class="nav-link"
+                       >
+                        Übung 2 - Pflichtfelder und Bereich
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                    <a href="../../../interlis-lab-demo/main/03-domain-und-enum/"
+                       class="nav-link"
+                       >
+                        Übung 3 - Domain und Enumeration
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                    <a href="../../../interlis-lab-demo/main/04-debugging-end-bloecke/"
+                       class="nav-link"
+                       >
+                        Übung 4 - Debugging von END-Blöcken
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                    <a href="../../../interlis-lab-demo/main/05-erste-association/"
+                       class="nav-link"
+                       >
+                        Übung 5 - Erste Association
+                    </a>
+            </li>
+    </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <nav class="breadcrumbs" data-chapter-breadcrumb="disabled">
+                        
+                            <a href="../../../interlis-lab-demo/main/01-erste-klasse/">Übung 1 - Deine erste Klasse</a>
+                        <span class="separator">/</span>
+                            <span class="current">Übung 1: Deine erste Klasse</span>
+            </nav>
+
+    <article class="doc-page">
+        <h1>Übung 1: Deine erste Klasse</h1>
+        <div class="doc-content">
+            <div id="preamble">
+ <div class="sectionbody">
+  <div class="paragraph">
+   <p>Der Einstieg beginnt bewusst klein: eine einzelne Klasse mit genau einem Attribut.</p>
+  </div>
+  <interlis-lab src="labs/01-erste-klasse.json" runner="cheerpj" ili2c-jar-url="../../../site-assets/interlis-lab/ili2c.jar" storage-key="demo-ili-lab-01-erste-klasse"><a href="labs/01-erste-klasse.json">Übung 1: Deine erste Klasse</a></interlis-lab>
+ </div>
+</div>
+        </div>
+    </article>
+
+            <nav class="prev-next">
+                    <a href="../../../interlis-lab-demo/main/" class="prev">INTERLIS Lab Demo</a>
+                    <a href="../../../interlis-lab-demo/main/02-pflichtfelder-und-bereich/" class="next">Übung 2: Pflichtfelder und Bereich</a>
+            </nav>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <p>Generated by <a href="https://github.com/stefan/thoth">Thoth Biblios</a></p>
+    </footer>
+</body>
+</html>

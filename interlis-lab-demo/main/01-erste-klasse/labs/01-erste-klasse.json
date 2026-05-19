@@ -1,0 +1,27 @@
+{
+  "id": "demo-01-erste-klasse",
+  "title": "Deine erste Klasse",
+  "type": "guided",
+  "level": "beginner",
+  "goal": "Du kannst in einem TOPIC eine CLASS mit einem einfachen Attribut definieren.",
+  "explanation": "Eine CLASS beschreibt gleichartige Objekte. Attribute beschreiben deren Eigenschaften.",
+  "task": "Ergänze in der Klasse Building ein Attribut Name vom Typ TEXT*100.",
+  "initialCode": "INTERLIS 2.4;\n\nMODEL SimpleBuilding (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      !! TODO: Attribut ergänzen\n    END Building;\n  END Data;\nEND SimpleBuilding.\n",
+  "hints": [
+    { "text": "Attribute stehen innerhalb der CLASS." },
+    { "text": "Die Syntax ist: Attributname : Typ;" },
+    { "text": "Gesucht ist die Zeile Name : TEXT*100;" }
+  ],
+  "solution": "INTERLIS 2.4;\n\nMODEL SimpleBuilding (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      Name : TEXT*100;\n    END Building;\n  END Data;\nEND SimpleBuilding.\n",
+  "checks": [
+    { "type": "ili2c-compiles" },
+    {
+      "type": "contains-text",
+      "text": "Name : TEXT*100;",
+      "message": "Das Attribut Name vom Typ TEXT*100 fehlt noch."
+    }
+  ],
+  "reflection": {
+    "question": "Ist das Attribut Name hier obligatorisch oder optional?"
+  }
+}

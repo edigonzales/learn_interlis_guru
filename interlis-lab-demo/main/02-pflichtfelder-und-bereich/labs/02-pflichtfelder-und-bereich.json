@@ -1,0 +1,32 @@
+{
+  "id": "demo-02-pflichtfelder-und-bereich",
+  "title": "Pflichtfelder und Bereich",
+  "type": "guided",
+  "level": "beginner",
+  "goal": "Du kannst ein obligatorisches Textattribut und einen einfachen Zahlenbereich formulieren.",
+  "explanation": "Mit MANDATORY markierst du ein Pflichtfeld. Ein nackter Zahlenbereich wie 1 .. 60 definiert einen einfachen numerischen Typ.",
+  "task": "Ergänze in der Klasse Building die Attribute Name als MANDATORY TEXT*100 und Floors als Bereich 1 .. 60.",
+  "initialCode": "INTERLIS 2.4;\n\nMODEL BuildingDetails (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      !! TODO: Pflichtfeld Name ergänzen\n      !! TODO: Floors ergänzen\n    END Building;\n  END Data;\nEND BuildingDetails.\n",
+  "hints": [
+    { "text": "MANDATORY steht vor dem eigentlichen Typ." },
+    { "text": "Für Floors genügt hier ein Zahlenbereich ohne zusätzlichen Typnamen." },
+    { "text": "Die beiden Zielzeilen lauten Name : MANDATORY TEXT*100; und Floors : 1 .. 60;" }
+  ],
+  "solution": "INTERLIS 2.4;\n\nMODEL BuildingDetails (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      Name : MANDATORY TEXT*100;\n      Floors : 1 .. 60;\n    END Building;\n  END Data;\nEND BuildingDetails.\n",
+  "checks": [
+    { "type": "ili2c-compiles" },
+    {
+      "type": "contains-text",
+      "text": "Name : MANDATORY TEXT*100;",
+      "message": "Das Pflichtfeld Name fehlt oder ist noch nicht als MANDATORY markiert."
+    },
+    {
+      "type": "contains-text",
+      "text": "Floors : 1 .. 60;",
+      "message": "Der Zahlenbereich für Floors fehlt noch."
+    }
+  ],
+  "reflection": {
+    "question": "Welches der beiden Attribute ist obligatorisch und woran erkennst du das?"
+  }
+}

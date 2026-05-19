@@ -1,0 +1,49 @@
+:root {
+  --demo-accent: #0f766e;
+  --demo-surface: #f3f7f7;
+}
+
+.doc-page:has(interlis-lab) {
+  max-width: 100%;
+  width: 100%;
+}
+
+.content > .paragraph.lead p {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  max-width: 64ch;
+}
+
+.content .exercise-path {
+  background: linear-gradient(180deg, rgba(15, 118, 110, 0.08), rgba(15, 118, 110, 0.02));
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 14px;
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.2rem;
+}
+
+.content .exercise-path ol {
+  margin-bottom: 0;
+}
+
+.content .exercise-meta {
+  background: var(--demo-surface);
+  border-left: 4px solid var(--demo-accent);
+  border-radius: 10px;
+  margin: 1rem 0 1.75rem;
+  padding: 0.9rem 1rem;
+}
+
+interlis-lab {
+  --interlis-lab-font-family: system-ui, sans-serif;
+  --interlis-lab-monospace-font: var(
+    --font-mono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Consolas,
+    monospace
+  );
+  display: block;
+  margin: 1.5rem 0 2rem;
+}
