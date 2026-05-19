@@ -5,13 +5,13 @@
   "level": "intermediate",
   "goal": "Du kannst Compilerfehler nutzen, um eine fehlerhafte Blockstruktur systematisch zu korrigieren.",
   "task": "Kompiliere das Modell, behebe das fehlende Semikolon und ordne die END-Blöcke wieder korrekt zu.",
-  "initialCode": "INTERLIS 2.3;\n\nMODEL BrokenStructure (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      Name : TEXT*100\n      Usage : (residential, commercial, public);\n    END Data;\n  END Building;\nEND BrokenStructure.\n",
+  "initialCode": "INTERLIS 2.4;\n\nMODEL BrokenStructure (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      Name : TEXT*100\n      Usage : (residential, commercial, public);\n    END Data;\n  END Building;\nEND BrokenStructure.\n",
   "hints": [
     { "text": "Achte zuerst auf die erste Fehlermeldung. Ein fehlendes Semikolon kann Folgefehler auslösen." },
     { "text": "Die Reihenfolge der Blockenden lautet CLASS, dann TOPIC, dann MODEL." },
     { "text": "Die korrekte Folge am Ende ist END Building; und danach END Data;" }
   ],
-  "solution": "INTERLIS 2.3;\n\nMODEL BrokenStructure (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      Name : TEXT*100;\n      Usage : (residential, commercial, public);\n    END Building;\n  END Data;\nEND BrokenStructure.\n",
+  "solution": "INTERLIS 2.4;\n\nMODEL BrokenStructure (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Building =\n      Name : TEXT*100;\n      Usage : (residential, commercial, public);\n    END Building;\n  END Data;\nEND BrokenStructure.\n",
   "checks": [
     { "type": "ili2c-compiles" }
   ],

@@ -6,13 +6,13 @@
   "goal": "Du kannst einen eigenen Typ über DOMAIN definieren und ihn in einer Klasse wiederverwenden.",
   "explanation": "Eine DOMAIN gibt einem Typ einen Namen. Das hilft, wenn derselbe Typ mehrfach verwendet werden soll. Eine Enumeration beschreibt eine kleine Liste erlaubter Werte.",
   "task": "Lege im TOPIC die DOMAIN BuildingName = TEXT*100 an und ergänze in Building das Attribut Usage als Enumeration mit residential, commercial und public.",
-  "initialCode": "INTERLIS 2.3;\n\nMODEL BuildingKinds (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    !! TODO: DOMAIN BuildingName = TEXT*100;\n\n    CLASS Building =\n      Name : BuildingName;\n      !! TODO: Usage ergänzen\n    END Building;\n  END Data;\nEND BuildingKinds.\n",
+  "initialCode": "INTERLIS 2.4;\n\nMODEL BuildingKinds (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    !! TODO: DOMAIN BuildingName = TEXT*100;\n\n    CLASS Building =\n      Name : BuildingName;\n      !! TODO: Usage ergänzen\n    END Building;\n  END Data;\nEND BuildingKinds.\n",
   "hints": [
     { "text": "DOMAIN kann direkt im TOPIC stehen, noch vor der CLASS." },
     { "text": "Die Enumeration steht direkt rechts vom Doppelpunkt in Klammern." },
     { "text": "Die Zielzeilen sind DOMAIN BuildingName = TEXT*100; und Usage : (residential, commercial, public);" }
   ],
-  "solution": "INTERLIS 2.3;\n\nMODEL BuildingKinds (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    DOMAIN BuildingName = TEXT*100;\n\n    CLASS Building =\n      Name : BuildingName;\n      Usage : (residential, commercial, public);\n    END Building;\n  END Data;\nEND BuildingKinds.\n",
+  "solution": "INTERLIS 2.4;\n\nMODEL BuildingKinds (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    DOMAIN BuildingName = TEXT*100;\n\n    CLASS Building =\n      Name : BuildingName;\n      Usage : (residential, commercial, public);\n    END Building;\n  END Data;\nEND BuildingKinds.\n",
   "checks": [
     { "type": "ili2c-compiles" },
     {
