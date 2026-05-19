@@ -1,5 +1,6 @@
 # Project build output
 .gradle/
+.thoth/
 build/
 site/
 

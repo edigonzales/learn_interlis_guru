@@ -1,18 +1,31 @@
-name: Build Biblios Site
+name: Build and deploy Biblios site
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
 jobs:
-  build-site:
-    runs-on: codeberg-small
+  build:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Setup Java 25
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '25'
@@ -62,27 +75,23 @@ jobs:
           test -d ./site
           test -f ./site/index.html
 
-      - name: Add custom domain
-        shell: bash
-        run: |
-          set -euo pipefail
-          echo "learn.interlis.guru" > ./site/.domains
-          cat ./site/.domains
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./site
 
-      - name: Deploy to pages branch
-        shell: bash
-        run: |
-          set -euo pipefail
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-          cd ./site
-
-          git init
-          git config user.name "Forgejo Actions"
-          git config user.email "actions@codeberg.org"
-          git checkout -b pages
-
-          git add .
-          git commit -m "Deploy biblios site"
-
-          git remote add origin "https://codeberg.org/${{ forge.repository }}.git"
-          git push --force "https://${{ forge.actor }}:${{ secrets.DEPLOY_TOKEN }}@codeberg.org/${{ forge.repository }}.git" pages:pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
