@@ -1,0 +1,29 @@
+= INTERLIS Lab Demo
+:doctype: book
+
+[.lead]
+Dieses kleine Biblios-Demo zeigt fünf INTERLIS-Lernfragen mit der `interlis-lab-web-component` in einer klaren Progression von einfach zu anspruchsvoller.
+
+[.exercise-meta]
+Wichtig für dieses Demo:
+
+- Die Biblios-Seite wird aus dem aktuellen Workspace gerendert.
+- Die Web Component wird beim Build explizit in Version `0.1.11` aufgelöst.
+- Jede Übung kann direkt im Browser kompiliert werden.
+
+[.exercise-path]
+== Lernpfad
+
+1. Eine erste `CLASS` mit einem Attribut ergänzen
+2. Obligatorische und optionale Attribute unterscheiden
+3. Eigene `DOMAIN` und eine kleine Enumeration einführen
+4. Compilerfehler bei Blöcken systematisch beheben
+5. Eine erste `ASSOCIATION` zwischen zwei Klassen formulieren
+
+== Übungen
+
+- xref:01-erste-klasse.adoc[Übung 1: Deine erste Klasse]
+- xref:02-pflichtfelder-und-bereich.adoc[Übung 2: Pflichtfelder und Bereich]
+- xref:03-domain-und-enum.adoc[Übung 3: Domain und Enumeration]
+- xref:04-debugging-end-bloecke.adoc[Übung 4: Debugging von END-Blöcken]
+- xref:05-erste-association.adoc[Übung 5: Erste Association]

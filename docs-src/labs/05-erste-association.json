@@ -1,0 +1,37 @@
+{
+  "id": "demo-05-erste-association",
+  "title": "Erste Association",
+  "type": "challenge",
+  "level": "advanced",
+  "goal": "Du kannst zwei Klassen mit einer einfachen ASSOCIATION verbinden.",
+  "explanation": "Eine ASSOCIATION beschreibt Beziehungen zwischen Klassen. Die Rollen werden mit Kardinalitäten an die beteiligten Klassen gehängt.",
+  "task": "Ergänze unter den beiden Klassen eine ASSOCIATION Ownership mit den Rollen owner -- {0..*} Person; und building -- {0..*} Building;.",
+  "initialCode": "INTERLIS 2.3;\n\nMODEL OwnershipModel (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Person =\n      Name : TEXT*100;\n    END Person;\n\n    CLASS Building =\n      Name : TEXT*100;\n    END Building;\n\n    !! TODO: Association Ownership ergänzen\n  END Data;\nEND OwnershipModel.\n",
+  "hints": [
+    { "text": "Die ASSOCIATION steht auf derselben Ebene wie die beiden CLASS-Definitionen im TOPIC." },
+    { "text": "Jede Rolle besteht aus Rollenname, Doppelstrich, Kardinalität und Zielklasse." },
+    { "text": "Beginne mit ASSOCIATION Ownership = und schliesse mit END Ownership;" }
+  ],
+  "solution": "INTERLIS 2.3;\n\nMODEL OwnershipModel (de) AT \"https://example.com\" VERSION \"2026-05-19\" =\n  TOPIC Data =\n    CLASS Person =\n      Name : TEXT*100;\n    END Person;\n\n    CLASS Building =\n      Name : TEXT*100;\n    END Building;\n\n    ASSOCIATION Ownership =\n      owner -- {0..*} Person;\n      building -- {0..*} Building;\n    END Ownership;\n  END Data;\nEND OwnershipModel.\n",
+  "checks": [
+    { "type": "ili2c-compiles" },
+    {
+      "type": "contains-text",
+      "text": "ASSOCIATION Ownership =",
+      "message": "Die ASSOCIATION Ownership fehlt noch."
+    },
+    {
+      "type": "contains-text",
+      "text": "owner -- {0..*} Person;",
+      "message": "Die Rolle owner ist noch nicht korrekt definiert."
+    },
+    {
+      "type": "contains-text",
+      "text": "building -- {0..*} Building;",
+      "message": "Die Rolle building ist noch nicht korrekt definiert."
+    }
+  ],
+  "reflection": {
+    "question": "Was beschreiben die beiden Kardinalitäten in dieser Association?"
+  }
+}

@@ -1,0 +1,6 @@
+= Übung 3: Domain und Enumeration
+:doctype: book
+
+Ab hier kapselst du einen Typ in einer `DOMAIN` und ergänzt zusätzlich eine kleine Enumeration.
+
+interlis-lab::labs/03-domain-und-enum.json[storage-key=demo-ili-lab-03-domain-enum,title="Übung 3: Domain und Enumeration"]

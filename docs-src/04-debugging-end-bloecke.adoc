@@ -1,0 +1,6 @@
+= Übung 4: Debugging von END-Blöcken
+:doctype: book
+
+In dieser Aufgabe gehst du stärker über Compilerfehler: ein fehlendes Semikolon und vertauschte `END`-Blöcke müssen zusammen korrigiert werden.
+
+interlis-lab::labs/04-debugging-end-bloecke.json[storage-key=demo-ili-lab-04-debugging,title="Übung 4: Debugging von END-Blöcken"]

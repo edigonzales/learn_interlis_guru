@@ -1,0 +1,34 @@
+site:
+  title: INTERLIS Lab Demo
+  url: https://learn.interlis.guru
+  default_language: de
+
+output:
+  dir: ./site
+  clean: true
+
+ui:
+  theme: default
+  show_version_badge: false
+  show_edit_link: false
+  show_source_link: false
+  syntax_highlighting: prism
+  version_switch_mode: start_page
+  search_language_mode: multilingual_safe
+  sidebar_toc_depth: 2
+  content_toc: off
+  content_section_numbers: on
+
+content:
+  sources:
+    - id: interlis-lab-demo
+      display_name: INTERLIS Lab Demo
+      url: https://codeberg.org/edigonzales/learn_interlis_guru.git
+      branches:
+        - name: main
+          display_version: Workspace
+      start_path: ./docs-src
+      default_version: main
+      navigation:
+        file: nav.yml
+      start_page: index.adoc

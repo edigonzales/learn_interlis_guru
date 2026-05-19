@@ -1,0 +1,13 @@
+items:
+  - title: Überblick
+    page: index.adoc
+  - title: Übung 1 - Deine erste Klasse
+    page: 01-erste-klasse.adoc
+  - title: Übung 2 - Pflichtfelder und Bereich
+    page: 02-pflichtfelder-und-bereich.adoc
+  - title: Übung 3 - Domain und Enumeration
+    page: 03-domain-und-enum.adoc
+  - title: Übung 4 - Debugging von END-Blöcken
+    page: 04-debugging-end-bloecke.adoc
+  - title: Übung 5 - Erste Association
+    page: 05-erste-association.adoc

@@ -1,0 +1,6 @@
+= Übung 2: Pflichtfelder und Bereich
+:doctype: book
+
+Jetzt kommt ein zweiter Schritt dazu: ein obligatorisches Textfeld und ein Zahlenbereich.
+
+interlis-lab::labs/02-pflichtfelder-und-bereich.json[storage-key=demo-ili-lab-02-pflichtfelder,title="Übung 2: Pflichtfelder und Bereich"]

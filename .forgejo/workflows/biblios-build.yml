@@ -1,0 +1,88 @@
+name: Build Biblios Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-site:
+    runs-on: codeberg-small
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Resolve latest snapshot metadata
+        id: snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_URL="https://jars.sogeo.services/snapshots/guru/interlis/thoth-biblios/0.0.1-SNAPSHOT"
+          METADATA_URL="${BASE_URL}/maven-metadata.xml"
+
+          echo "Fetching snapshot metadata: ${METADATA_URL}"
+          curl -fsSL "${METADATA_URL}" -o maven-metadata.xml
+
+          TIMESTAMP="$(grep -oPm1 '(?<=<timestamp>)[^<]+' maven-metadata.xml || true)"
+          BUILD_NUMBER="$(grep -oPm1 '(?<=<buildNumber>)[^<]+' maven-metadata.xml || true)"
+
+          if [ -z "${TIMESTAMP}" ] || [ -z "${BUILD_NUMBER}" ]; then
+            echo "Failed to parse <timestamp> or <buildNumber> from maven-metadata.xml"
+            exit 1
+          fi
+
+          VERSION="0.0.1-${TIMESTAMP}-${BUILD_NUMBER}"
+          JAR_NAME="thoth-biblios-${VERSION}-all.jar"
+          JAR_URL="${BASE_URL}/${JAR_NAME}"
+
+          echo "Resolved snapshot version: ${VERSION}"
+          echo "Resolved JAR URL: ${JAR_URL}"
+
+          echo "jar_name=${JAR_NAME}" >> "$GITHUB_OUTPUT"
+          echo "jar_url=${JAR_URL}" >> "$GITHUB_OUTPUT"
+
+      - name: Download snapshot JAR
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL "${{ steps.snapshot.outputs.jar_url }}" -o "${{ steps.snapshot.outputs.jar_name }}"
+          ls -lh "${{ steps.snapshot.outputs.jar_name }}"
+
+      - name: Build HTML documentation site
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar "${{ steps.snapshot.outputs.jar_name }}" build --config ./biblios.yml
+          test -d ./site
+          test -f ./site/index.html
+
+      - name: Add custom domain
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "learn.interlis.guru" > ./site/.domains
+          cat ./site/.domains
+
+      - name: Deploy to pages branch
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cd ./site
+
+          git init
+          git config user.name "Forgejo Actions"
+          git config user.email "actions@codeberg.org"
+          git checkout -b pages
+
+          git add .
+          git commit -m "Deploy biblios site"
+
+          git remote add origin "https://codeberg.org/${{ forge.repository }}.git"
+          git push --force "https://${{ forge.actor }}:${{ secrets.DEPLOY_TOKEN }}@codeberg.org/${{ forge.repository }}.git" pages:pages

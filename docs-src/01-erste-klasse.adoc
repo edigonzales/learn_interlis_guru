@@ -1,0 +1,6 @@
+= Übung 1: Deine erste Klasse
+:doctype: book
+
+Der Einstieg beginnt bewusst klein: eine einzelne Klasse mit genau einem Attribut.
+
+interlis-lab::labs/01-erste-klasse.json[storage-key=demo-ili-lab-01-erste-klasse,title="Übung 1: Deine erste Klasse"]

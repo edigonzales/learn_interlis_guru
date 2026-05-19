@@ -1,0 +1,6 @@
+= Übung 5: Erste Association
+:doctype: book
+
+Zum Schluss verbindest du zwei Klassen mit einer einfachen `ASSOCIATION`.
+
+interlis-lab::labs/05-erste-association.json[storage-key=demo-ili-lab-05-association,title="Übung 5: Erste Association"]
