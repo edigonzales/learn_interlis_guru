@@ -26,7 +26,7 @@ content:
       url: https://codeberg.org/edigonzales/learn_interlis_guru.git
       branches:
         - name: main
-          display_version: Workspace
+          display_version: v0.0.1
       start_path: ./docs-src
       default_version: main
       navigation:
